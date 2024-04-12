@@ -38,12 +38,16 @@ func NewRange(st time.Time, et time.Time) (Range, error) {
 }
 
 func NewRangeFromString(st, et, layout string) (_ Range, err error) {
+	return NewRangeFromStringInLocation(st, et, layout, time.Local)
+}
+
+func NewRangeFromStringInLocation(st, et, layout string, loc *time.Location) (_ Range, err error) {
 	var t1, t2 time.Time
-	t1, err = time.Parse(time.DateTime, st)
+	t1, err = time.ParseInLocation(layout, st, loc)
 	if err != nil {
 		return
 	}
-	t2, err = time.Parse(layout, et)
+	t2, err = time.ParseInLocation(layout, et, loc)
 	if err != nil {
 		return
 	}
