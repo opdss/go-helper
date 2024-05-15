@@ -31,7 +31,7 @@ func periodsOverlap(st Range, et Range) bool {
 }
 
 func NewRange(st time.Time, et time.Time) (Range, error) {
-	if !st.Before(et) {
+	if !st.Before(et) && !st.Equal(et) {
 		return Range{}, ErrRange
 	}
 	return Range{StartTime: st, EndTime: et}, nil
