@@ -16,6 +16,10 @@ func (r Range) PeriodsOverlap(t Range) bool {
 	return periodsOverlap(r, t)
 }
 
+func (r Range) IsEqual() bool {
+	return r.StartTime.Equal(r.EndTime)
+}
+
 // Contains 判断一个时间是否在这个时间段内，包含临界时间
 func (r Range) Contains(t time.Time) bool {
 	return r.StartTime.Equal(t) || r.EndTime.Equal(t) || (r.StartTime.Before(t) && r.EndTime.After(t))
