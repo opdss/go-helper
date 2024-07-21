@@ -3,7 +3,7 @@ package slices
 import (
 	"context"
 	"fmt"
-	"github.com/wuzfei/go-helper/funcs"
+	"github.com/opdss/go-helper/funcs"
 	"strings"
 	"testing"
 	"time"
