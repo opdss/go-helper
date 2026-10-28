@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/wuzfei/go-helper/slices"
+	"github.com/opdss/go-helper/slices"
 )
 
 type t1 string
